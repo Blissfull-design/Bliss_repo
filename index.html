@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bliss MindFull | Sound baths</title>
+<meta name="description" content="Sound bath sessions with singing bowls and gentle resonance. Lie back, listen, and let your mind settle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #eef0f6;
+    --ink: #1f2347;
+    --muted: #4d5273;
+    --brass: #a97a2c;
+    --ring: rgba(31, 35, 71, .16);
+    --panel: #e2e5f0;
+    --on-brass: #ffffff;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12152b;
+      --ink: #e8eaf6;
+      --muted: #aeb3d3;
+      --brass: #d9b36a;
+      --ring: rgba(232, 234, 246, .16);
+      --panel: #1b1f3d;
+      --on-brass: #12152b;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; }
+
+  .wrap { width: min(100% - 2.5rem, 40rem); margin-inline: auto; }
+
+  header.top { padding: 1.25rem 0; }
+  header.top .wrap { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+  .brand { font-family: var(--serif); font-size: 1.25rem; font-weight: 500; text-decoration: none; }
+  nav a { margin-left: 1.25rem; text-decoration: none; color: var(--muted); font-weight: 500; }
+  nav a:hover { color: var(--ink); }
+
+  /* Hero: a singing bowl struck once, rings spreading outward */
+  .hero { position: relative; overflow: hidden; padding: clamp(4rem, 14vw, 8rem) 0 clamp(4rem, 12vw, 7rem); }
+  .rings { position: absolute; left: 50%; top: 50%; width: 0; height: 0; pointer-events: none; }
+  .rings i {
+    position: absolute; border-radius: 50%; border: 1px solid var(--ring);
+    width: var(--s); height: var(--s); left: calc(var(--s) / -2); top: calc(var(--s) / -2);
+    animation: ripple 2.4s cubic-bezier(.2, .6, .3, 1) both;
+    animation-delay: calc(var(--n) * 260ms);
+  }
+  .rings i:nth-child(1) { --s: 14rem; --n: 0; }
+  .rings i:nth-child(2) { --s: 24rem; --n: 1; }
+  .rings i:nth-child(3) { --s: 36rem; --n: 2; }
+  .rings i:nth-child(4) { --s: 50rem; --n: 3; }
+  .rings i:nth-child(5) { --s: 66rem; --n: 4; }
+  @keyframes ripple { from { transform: scale(.3); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+  .hero .wrap { position: relative; text-align: center; }
+  h1 {
+    font-family: var(--serif); font-weight: 400; margin: 0 0 1.25rem;
+    font-size: clamp(2.6rem, 9vw, 4.5rem); line-height: 1.05; letter-spacing: -.01em;
+  }
+  .lede { max-width: 30rem; margin: 0 auto 2rem; color: var(--muted); font-size: 1.15rem; }
+  .btn {
+    display: inline-block; padding: .85rem 1.6rem; border-radius: 999px;
+    background: var(--brass); color: var(--on-brass); font-weight: 600; text-decoration: none;
+  }
+  .btn:hover { filter: brightness(1.08); }
+
+  section { padding: clamp(2.5rem, 8vw, 4.5rem) 0; }
+  h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.8rem, 5vw, 2.4rem); line-height: 1.15; margin: 0 0 1rem; }
+  p { margin: 0 0 1rem; }
+  .muted { color: var(--muted); }
+
+  .details { background: var(--panel); }
+  dl { margin: 1.5rem 0 0; display: grid; gap: 1.1rem; }
+  dt { font-weight: 600; }
+  dd { margin: 0; color: var(--muted); }
+
+  .contact a.big { font-family: var(--serif); font-size: 1.5rem; word-break: break-word; }
+  .contact ul { list-style: none; padding: 0; margin: 1.25rem 0 0; display: grid; gap: .5rem; }
+
+  footer { padding: 2rem 0 3rem; color: var(--muted); font-size: .95rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .rings i { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Bliss MindFull</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#expect">What to expect</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="rings" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="wrap">
+      <h1>Lie back. Let the sound do the work.</h1>
+      <p class="lede">Sound bath sessions with singing bowls and soft resonance, made for quieting a busy mind.</p>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>What is a sound bath?</h2>
+      <p>A sound bath is a guided rest. You lie down comfortably while slow, layered tones from singing bowls fill the room. There is nothing to practise and nothing to get right.</p>
+      <p class="muted">Many people feel calmer, sleep a little easier, and leave with a clearer head. Beginners are very welcome.</p>
+    </div>
+  </section>
+
+  <section id="expect" class="details">
+    <div class="wrap">
+      <h2>What to expect</h2>
+      <p>Sessions are unhurried and quiet. Bring a mat or blanket if you like; a few are available if you forget.</p>
+      <dl>
+        <!-- TODO: replace the details below with your real session info -->
+        <div><dt>Length</dt><dd>About 60 minutes</dd></div>
+        <div><dt>Where</dt><dd>Add your studio or city here</dd></div>
+        <div><dt>Group size</dt><dd>Small groups, so the room stays calm</dd></div>
+        <div><dt>What to wear</dt><dd>Anything loose and comfortable</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Ask about the next session</h2>
+      <p>To find out dates or ask a question, send a message and I'll reply personally.</p>
+      <!-- TODO: replace with your real email, WhatsApp number, and Instagram -->
+      <a class="big" href="mailto:hello@blissmindfull.com">hello@blissmindfull.com</a>
+      <ul>
+        <li><a href="https://wa.me/910000000000">Message on WhatsApp</a></li>
+        <li><a href="https://instagram.com/yourhandle">Follow on Instagram</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="yr">2026</span> Bliss MindFull</div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
